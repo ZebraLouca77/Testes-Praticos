@@ -1,0 +1,96 @@
+type: collection.insomnia.rest/5.0
+name: My first collection
+meta:
+  id: wrk_6f90f7ebd0264324be0332070d2ba7cd
+  created: 1753798000341
+  modified: 1753798000341
+  description: ""
+collection:
+  - url: http://localhost:8080/centrodistribuicao
+    name: Consulta Centro Distribuição Por produtoId
+    meta:
+      id: req_e545e61326a94648839ece5c970b5c8d
+      created: 1753906590444
+      modified: 1753990233577
+      isPrivate: false
+      description: ""
+      sortKey: -1753805342662.25
+    method: GET
+    parameters:
+      - id: pair_18c61f20ac2643a8b78254fbf5273b70
+        name: produtoId
+        value: "1"
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/pedidos/1/itens-cds
+    name: Consulta Pedido Por pedidoId
+    meta:
+      id: req_6755021a5644414a8505dec5a562aa21
+      created: 1753967420706
+      modified: 1753989341367
+      isPrivate: false
+      description: ""
+      sortKey: -1753741249966.4375
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/11.3.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/pedidos/processar
+    name: Processa Pedido
+    meta:
+      id: req_896e89ecc7d9485fb88026e8d4ce606c
+      created: 1753983654420
+      modified: 1753983705721
+      isPrivate: false
+      description: ""
+      sortKey: -1753983654420
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "itens": [
+            { "produtoId": 1 },
+            { "produtoId": 2 }
+          ]
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_a674091c89f01ce5841a7b85a0ba89e789d0a4da
+    created: 1753798000343
+    modified: 1753798000343
+environments:
+  name: Base Environment
+  meta:
+    id: env_a674091c89f01ce5841a7b85a0ba89e789d0a4da
+    created: 1753798000342
+    modified: 1753798000342
+    isPrivate: false

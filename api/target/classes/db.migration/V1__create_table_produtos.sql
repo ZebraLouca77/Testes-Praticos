@@ -1,0 +1,6 @@
+CREATE TABLE produtos
+(
+    id   BIGINT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100)       NOT NULL,
+    sku  VARCHAR(50) UNIQUE NOT NULL
+);
