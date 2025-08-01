@@ -1,13 +1,10 @@
 package meli.pedidos.api.centrodistribuicao;
 
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
 import jakarta.persistence.*;
-import lombok.Getter;
+import lombok.*;
 
+@Entity
 @Table(name = "centros_distribuicao")
-@Entity(name = "CentroDistribuicao")
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
@@ -24,9 +21,7 @@ public class CentroDistribuicao {
     private Status status;
 
     public CentroDistribuicao(DadosCentroDistribuicao dados) {
-
         this.nome = dados.nome();
         this.status = dados.status();
-
     }
 }

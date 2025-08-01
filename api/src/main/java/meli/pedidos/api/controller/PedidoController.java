@@ -1,8 +1,8 @@
 package meli.pedidos.api.controller;
 
 import meli.pedidos.api.pedido.DadosPedidoProcessa;
-import meli.pedidos.api.service.ItemPedidoService;
 import meli.pedidos.api.itempedido.ItemPedidoCentroDistribuicao;
+import meli.pedidos.api.service.ItemPedidoService;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.http.ResponseEntity;
 import meli.pedidos.api.service.PedidoService;
@@ -24,10 +24,9 @@ public class PedidoController {
     }
 
     @GetMapping("/{id}/itens-cds")
-    public ResponseEntity<List<ItemPedidoCentroDistribuicao>> consultarItensECds(@PathVariable Long id) {
-        var itens = itemPedidoService.consultarItensECdsDoPedido(id);
-        return ResponseEntity.ok(itens);
+    public ResponseEntity<List<ItemPedidoCentroDistribuicao>> consultarItensComCds(@PathVariable Long id) {
+        var resposta = itemPedidoService.consultarItensECdsDoPedido(id);
+        return ResponseEntity.ok(resposta);
     }
-
 }
 

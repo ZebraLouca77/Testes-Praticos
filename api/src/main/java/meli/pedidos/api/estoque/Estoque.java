@@ -1,16 +1,13 @@
 package meli.pedidos.api.estoque;
 
-import meli.pedidos.api.centrodistribuicao.CentroDistribuicao;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import meli.pedidos.api.produto.Produto;
-import lombok.NoArgsConstructor;
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
 import jakarta.persistence.*;
-import lombok.Getter;
+import lombok.*;
+import meli.pedidos.api.centrodistribuicao.CentroDistribuicao;
+import meli.pedidos.api.produto.Produto;
 
+@Entity
 @Table(name = "estoque_cd")
-@Entity(name = "Estoque")
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor

@@ -1,13 +1,10 @@
 package meli.pedidos.api.produto;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
+@Entity
 @Table(name = "produtos")
-@Entity(name = "Produto")
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
@@ -17,7 +14,10 @@ public class Produto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String nome;
-    private String sku;
 
+    @Column(nullable = false)
+    private String nome;
+
+    @Column(nullable = false, unique = true)
+    private String sku;
 }

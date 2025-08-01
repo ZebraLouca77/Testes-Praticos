@@ -6,7 +6,7 @@ import meli.pedidos.api.pedido.Pedido;
 import meli.pedidos.api.produto.Produto;
 import meli.pedidos.api.centrodistribuicao.CentroDistribuicao;
 
-@Entity(name = "ItemPedido")
+@Entity
 @Table(name = "itens_pedido")
 @Getter
 @NoArgsConstructor

@@ -13,11 +13,14 @@ import java.util.Map;
 @RequestMapping("/centrodistribuicao")
 public class CentroDistribuicaoController {
 
-    @Autowired
-    private CentroDistribuicaoService centroDistribuicaoService;
+    private final CentroDistribuicaoService centroDistribuicaoService;
+
+    public CentroDistribuicaoController(CentroDistribuicaoService centroDistribuicaoService) {
+        this.centroDistribuicaoService = centroDistribuicaoService;
+    }
 
     @GetMapping
-    public ResponseEntity<?> ConsultaentroDistribuicao(@RequestParam Long produtoId) {
+    public ResponseEntity<?> consultaCentroDistribuicao(@RequestParam Long produtoId) {
         try {
             List<DadosConsultaCentroDistribuicao> cds = centroDistribuicaoService.consultaCentroDistribuicao(produtoId);
             return ResponseEntity.ok(cds);
@@ -25,5 +28,4 @@ public class CentroDistribuicaoController {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(Map.of("mensagem", e.getMessage()));
         }
     }
-
 }

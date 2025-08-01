@@ -7,7 +7,7 @@ import meli.pedidos.api.itempedido.ItemPedido;
 
 import java.util.List;
 
-@Entity(name = "Pedido")
+@Entity
 @Table(name = "pedidos")
 @Getter
 @NoArgsConstructor
@@ -19,18 +19,24 @@ public class Pedido {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
-    @JoinColumn(name = "cliente_id")
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "cliente_id", nullable = false)
     private Cliente cliente;
 
     @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
     private Status status;
 
-    @OneToMany(mappedBy = "pedido", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+    @OneToMany(
+            mappedBy = "pedido",
+            cascade = CascadeType.ALL,
+            orphanRemoval = true,
+            fetch = FetchType.LAZY
+    )
     private List<ItemPedido> itens;
 
     public Pedido(DadosPedido dados) {
-        this.cliente = new Cliente(dados.cliente_id()); // precisa do construtor no Cliente
+        this.cliente = new Cliente(dados.cliente_id()); // Cliente precisa ter esse construtor
         this.status = dados.status();
     }
 }
