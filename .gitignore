@@ -1,0 +1,27 @@
+# Arquivos de sistema macOS
+.DS_Store
+
+# Build do Maven/Gradle
+target/
+build/
+
+# Arquivos de compilação Java
+*.class
+
+# IntelliJ IDEA
+.idea/
+*.iml
+
+# Eclipse
+.project
+.classpath
+.settings/
+
+# Arquivos de log e temp
+*.log
+*.tmp
+
+# Configs locais
+*.env
+*.local
+*.bak
