@@ -1,7 +1,0 @@
-CREATE TABLE pedido
-(
-    id        BIGINT AUTO_INCREMENT PRIMARY KEY,
-    item      VARCHAR(100)   NOT NULL,
-    valor     DECIMAL(10, 2) NOT NULL,
-    criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);

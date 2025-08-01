@@ -1,7 +1,0 @@
-CREATE TABLE clientes
-(
-    id        BIGINT AUTO_INCREMENT PRIMARY KEY,
-    nome      VARCHAR(100) NOT NULL,
-    email     VARCHAR(100),
-    criado_em DATETIME DEFAULT CURRENT_TIMESTAMP
-);
