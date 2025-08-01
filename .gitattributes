@@ -1,2 +1,8 @@
-/mvnw text eol=lf
-*.cmd text eol=crlf
+# Forçar fim de linha Unix
+* text=auto eol=lf
+
+# Tratar arquivos Java como texto
+*.java text
+
+# Ignorar mudanças em permissão de arquivos
+* -text diff
