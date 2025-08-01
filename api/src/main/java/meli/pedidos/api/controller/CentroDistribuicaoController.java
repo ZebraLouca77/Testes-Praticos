@@ -1,7 +1,6 @@
 package meli.pedidos.api.controller;
 
 import meli.pedidos.api.centrodistribuicao.DadosConsultaCentroDistribuicao;
-import org.springframework.beans.factory.annotation.Autowired;
 import meli.pedidos.api.service.CentroDistribuicaoService;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.http.ResponseEntity;
