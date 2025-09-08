@@ -20,10 +20,6 @@ public class CentroDistribuicaoService {
         List<DadosConsultaCentroDistribuicao> resultado =
                 centroDistribuicaoRepository.listarCentroDistribuicaoComItens(produtoId);
 
-        if (resultado.isEmpty()) {
-            throw new IllegalStateException("Nenhum centro de distribuição disponível com estoque para o produto ID: " + produtoId);
-        }
-
         return resultado;
     }
 }
